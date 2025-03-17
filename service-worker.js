@@ -1,8 +1,13 @@
 self.addEventListener("install", (event) => {
-    console.log("Service Worker installÃ©.");
+    console.log("Service Worker installé.");
     event.waitUntil(
         caches.open("v1").then((cache) => {
-            return cache.addAll(["/"]);
+            return cache.addAll([
+                "/",
+                "app.py",
+                "service-worker.js",
+                "favicon.ico"
+            ]);
         })
     );
 });
